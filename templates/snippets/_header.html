@@ -1,0 +1,26 @@
+ <!-- Start TOP_BAR -->
+
+<header>
+    <div id="leftheader">
+        <h5 style="margin: 8px 0"><a style="font-size: 22px; font-family: FreeMono">Neurocognitest</a></h5>
+    </div>
+
+    <div id="rightheader">
+        <h5 style="margin: 10px 0">
+            <a style="font-weight: normal; margin: 0 30px 0; color: #FFFFFF; text-shadow: 5px 2px 5px black;"
+               href="http://192.168.1.66:5000">Главная</a>
+
+                {% if 'user' in session %}
+                    <a style="font-weight: normal; margin: 0 30px 0; color: #FFFFFF; text-shadow: 5px 2px 5px black;"
+                            href="http://192.168.1.66:5000/user">Личный кабинет</a>
+                {% else %}
+                    <a style="font-weight: normal; margin: 0 30px 0; color: #FFFFFF; text-shadow: 5px 2px 5px black;"
+                            href="http://192.168.1.66:5000/login">Вход</a>
+                {% endif %}
+
+            <a style="font-weight: normal; margin: 0 5% 0 30px; color: #FFFFFF; text-shadow: 5px 2px 5px black;"
+               href="http://192.168.1.66:5000/contacts">Контакты</a>
+        </h5>
+    </div>
+</header>
+<!-- End TOP_BAR -->

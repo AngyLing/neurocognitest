@@ -1,0 +1,128 @@
+/*
+--------------------------------
+    : Custom - General css :
+--------------------------------
+*/
+
+header {
+        width: 100%; height: 43px; margin: 0 0 10px; padding: 10px;
+        }
+
+footer {
+        width: 100%; height: 90px; margin: 300px auto 0; padding: 20px; background-color: #dcdcdc; position: absolute;
+        bottom: 0; left: 0;
+        }
+
+body { font-family: Helvetica, Arial, sans-serif}
+
+.test_table {width: 950px; height: 1530px; margin: 15px auto; padding: 20px 15px 15px; border: 2px solid #008080;}
+
+h1 { font-size: 30px; padding: 10px; text-align: center}
+h2 { font-size: 24px; margin: 10px 0 0; text-align: center}
+h3 { font-size: 18px; margin: 30px 0 20px; padding: 0 5px; text-align: justify}
+h5 {font-size: 20px; color: #FFFFFF; text-align: end; }
+p { font-size: 18px;  margin: 10px auto}
+a { text-decoration: none; }
+
+table { width: 100%; /* Ширина всей таблицы */
+        }
+        TD {
+        vertical-align: center;
+        padding: 3px; /* Поля вокруг ячеек */
+        font-size: 18px;
+        height: 46px;
+        }
+
+        TD#leftcol {
+        width: 630px;
+        vertical-align: center;
+        height: 46px;
+        }
+
+#leftheader {
+    position: absolute;
+    float: left;
+    left: 0px; /* Положение левого края */
+    top: 0; /* Положение верхнего края */
+    width: 180px; /* Ширина слоя */
+    background: #008080; /* Цвет фона */
+    height: 43px; margin: 0 0 10px; padding: 10px;
+    border: 0;
+    z-index: 101
+    }
+
+#rightheader {
+    position: absolute; /* Абсолютное позиционирование */
+    float: left;
+    left: 0; /* Положение левого края */
+    top: 0; /* Положение верхнего края */
+    width: 100%; /* Ширина слоя */
+    background: #008080; /* Цвет фона */
+    height: 43px; margin: 0 0 10px; padding: 10px;
+    border: 0
+    }
+
+
+.res_button {
+        width: 220px;
+        height: 60px;
+        font-size: 20px;
+        background-color: #008080;
+        /* background-color: #2724c9;*/
+        border: 2px;
+        color: white;
+        margin: 10px;
+        border-radius: 10px;
+        }
+
+.test_button {
+        width: 80px;
+        height: 40px;
+        font-size: 17px;
+        background-color: #e7e7e7;
+        border: 2px;
+        border-color: black;
+        border-radius: 5px;
+        }
+
+
+.savebutton {
+        width: 130px;
+        height: 50px;
+        font-size: 18px;
+        background-color: #4B0082;
+        border: 2px;
+        color: white;
+        margin: 10px;
+        border-radius: 5px;
+}
+
+.signbutton {
+        width: 110px;
+        height: 50px;
+        font-size: 24px;
+        background-color: #4B0082;
+        border: 2px;
+        color: white;
+        margin: 10px;
+        border-radius: 5px;}
+
+
+.userform {
+    width: 400px;
+    font-size: 21px;
+    margin: 20px 10px 100px;
+    padding: 10px;
+}
+
+.signform {
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px auto 10px;
+}
+
+
+.patient {
+
+}
