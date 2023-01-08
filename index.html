@@ -1,0 +1,32 @@
+<html lang="ru">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>Neurocognitest</title>
+
+    <style>
+        {% include "css.css" %}
+    </style>
+</head>
+
+<body>
+    {% include "snippets/_header.html" %}
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="test_table" style="width: 99%; height: 50px; border: 2px solid green; border-radius: 10px">
+            <h2 style="color: green">{{ messages[0] }}</h2>
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div style="margin: 30px">
+        <h1>Название и описание портала</h1>
+
+        <h3 style="font-weight: normal; margin: 50px 50px 30px">На данный момент доступны следующие диагностические материалы:</h3>
+        <p style="font-size: 24px; margin: 0 120px; font-weight: bold"><a href="http://192.168.1.66:5000/test/sensitisation">Опросник по центральной сенситизации: часть А</a></p>
+
+    </div>
+    {% include "snippets/_footer.html" %}
+</body>
+</html>
