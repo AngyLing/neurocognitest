@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {% include "snippets/_header.html" %}
+    {% include "templates/snippets/_header.html" %}
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}
@@ -27,6 +27,6 @@
         <p style="font-size: 24px; margin: 0 120px; font-weight: bold"><a href="http://192.168.1.66:5000/test/sensitisation">Опросник по центральной сенситизации: часть А</a></p>
 
     </div>
-    {% include "snippets/_footer.html" %}
+    {% include "templates/snippets/_footer.html" %}
 </body>
 </html>
