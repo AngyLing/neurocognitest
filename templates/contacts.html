@@ -1,20 +1,18 @@
 <html lang="ru">
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<head>
-    <meta charset="UTF-8">
-    <title>Контакты</title>
-    <style>
-        {% include "css.css" %}
-    </style>
-</head>
-
-<body>
-    {% include "snippets/_header.html" %}
-    <div style="margin: 30px">
-        <h1>Контакты</h1>
-        <h3 style="font-weight: normal; margin: 50px">'Здесь будет информация о связи с нами (возможно). #TODO: тогда в футере убрать почту'</h3>
-
-    </div>
-    {% include "snippets/_footer.html" %}
-</body>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Контакты</title>
+		<style>
+			{% include "css.css" %}
+		</style>
+	</head>
+	<body>
+		{% include "snippets/_header.html" %}
+		<div style="margin: 30px">
+			<h1>Контакты</h1>
+			<h3 style="font-weight: normal; margin: 50px">'Здесь будет информация о связи с нами (возможно). #TODO: тогда в футере убрать почту'</h3>
+		</div>
+		{% include "snippets/_footer.html" %}
+	</body>
 </html>

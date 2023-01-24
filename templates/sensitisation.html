@@ -1,233 +1,230 @@
 <html>
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <head>
-        <title>Опросник по центральной сенситизации</title>
-        <style>
-            {% include "css.css" %}
-        </style>
-
-    </head>
-    <body>
-        {% include "snippets/_header.html" %}
-
-        <div class="test_table">
-            <h1>Опросник по центральной сенситизации: часть А</h1>
-            <h2><i>Перевод О.Р.Есина, Е.А.Горобец с разрешения Randy Neblett</i></h2>
-            <h2 style="font-size: 20px"><i>Казанский федеральный университет, 2019</i></h2>
-            <h3>Пожалуйста, нажмите в правой части на слово, точнее всего соответствующее каждому утверждению.</h3>
-            <table border="0">
-                <tr id='1q'>
-                    <td tag="unchecked">Я чувствую себя усталым и неотдохнувшим, когда просыпаюсь</td>
-                    <td><button class="test_button" value=0 line=1 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=1 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=1 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=1 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=1 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='2q'>
-                    <td tag="unchecked">Я чувствую напряжение/скованность и боль в мышцах</td>
-                    <td><button class="test_button" value=0 line=2 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=2 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=2 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=2 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=2 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='3q'>
-                    <td tag="unchecked">У меня бывают приступы тревожности</td>
-                    <td><button class="test_button" value=0 line=3 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=3 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=3 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=3 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=3 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='4q'>
-                    <td tag="unchecked">Я скриплю зубами или стискиваю их</td>
-                    <td><button class="test_button" value=0 line=4 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=4 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=4 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=4 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=4 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='5q'>
-                    <td tag="unchecked">У меня проблемы со стулом (диарея и/или запор)</td>
-                    <td><button class="test_button" value=0 line=5 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=5 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=5 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=5 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=5 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='6q'>
-                    <td tag="unchecked">Мне нужна помощь в обычной бытовой жизни</td>
-                    <td><button class="test_button" value=0 line=6 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=6 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=6 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=6 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=6 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='7q'>
-                    <td tag="unchecked">Я чувствителен к яркому свету</td>
-                    <td><button class="test_button" value=0 line=7 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=7 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=7 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=7 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=7 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='8q'>
-                    <td tag="unchecked">Я очень быстро устаю от физической активности</td>
-                    <td><button class="test_button" value=0 line=8 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=8 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=8 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=8 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=8 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='9q'>
-                    <td tag="unchecked">Я чувствую боль по всему телу</td>
-                    <td><button class="test_button" value=0 line=9 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=9 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=9 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=9 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=9 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='10q'>
-                    <td tag="unchecked">У меня головные боли</td>
-                    <td><button class="test_button" value=0 line=10 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=10 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=10 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=10 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=10 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='11q'>
-                    <td tag="unchecked">Я чувствую дискомфорт в мочевом пузыре и/или жжение при мочеиспускании</td>
-                    <td><button class="test_button" value=0 line=11 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=11 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=11 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=11 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=11 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='12q'>
-                    <td tag="unchecked">Я плохо сплю</td>
-                    <td><button class="test_button" value=0 line=12 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=12 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=12 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=12 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=12 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='13q'>
-                    <td tag="unchecked">Мне сложно сконцентрироваться</td>
-                    <td><button class="test_button" value=0 line=13 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=13 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=13 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=13 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=13 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='14q'>
-                    <td tag="unchecked">У меня проблемы с кожей (сухость, зуд, высыпания)</td>
-                    <td><button class="test_button" value=0 line=14 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=14 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=14 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=14 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=14 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='15q'>
-                    <td tag="unchecked">Стресс усиливает мои соматические симптомы</td>
-                    <td><button class="test_button" value=0 line=15 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=15 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=15 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=15 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=15 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='16q'>
-                    <td tag="unchecked">Я чувствую грусть или подавленность</td>
-                    <td><button class="test_button" value=0 line=16 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=16 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=16 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=16 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=16 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='17q'>
-                    <td tag="unchecked">У меня мало сил</td>
-                    <td><button class="test_button" value=0 line=17 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=17 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=17 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=17 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=17 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='18q'>
-                    <td tag="unchecked">У меня напряжены мышцы шеи и плеч</td>
-                    <td><button class="test_button" value=0 line=18 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=18 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=18 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=18 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=18 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='19q'>
-                    <td tag="unchecked">У меня боли в челюсти</td>
-                    <td><button class="test_button" value=0 line=19 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=19 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=19 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=19 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=19 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='20q'>
-                    <td tag="unchecked">Некоторые запахи, например духи, вызывают у меня головокружение и тошноту</td>
-                    <td><button class="test_button" value=0 line=20 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=20 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=20 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=20 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=20 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='21q'>
-                    <td tag="unchecked">Мне приходится часто мочиться</td>
-                    <td><button class="test_button" value=0 line=21 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=21 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=21 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=21 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=21 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='22q'>
-                    <td tag="unchecked">У меня дискомфорт в ногах и «синдром беспокойных ног», когда я ночью пытаюсь уснуть</td>
-                    <td><button class="test_button" value=0 line=22 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=22 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=22 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=22 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=22 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='23q'>
-                    <td tag="unchecked">У меня сложности с запоминанием</td>
-                    <td><button class="test_button" value=0 line=23 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=23 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=23 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=23 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=23 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='24q'>
-                    <td tag="unchecked">В детстве я перенес(ла) травму</td>
-                    <td><button class="test_button" value=0 line=24 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=24 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=24 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=24 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=24 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-                <tr id='25q'>
-                    <td tag="unchecked">У меня боль в тазовой области</td>
-                    <td><button class="test_button" value=0 line=25 onclick="ChangeColor(this);">Никогда</button></td>
-                    <td><button class="test_button" value=1 line=25 onclick="ChangeColor(this);">Редко</button></td>
-                    <td><button class="test_button" value=2 line=25 onclick="ChangeColor(this);">Иногда</button></td>
-                    <td><button class="test_button" value=3 line=25 onclick="ChangeColor(this);">Часто</button></td>
-                    <td><button class="test_button" value=4 line=25 onclick="ChangeColor(this);">Всегда</button></td>
-                </tr>
-            </table>
-            <p style="text-align: center"><button type="submit" value="send" class="res_button" onclick="getresult();">Получить результат</button></p>
-            <h2 id='res' style='margin: 60px 0 0'></h2>
-            <h3 id="save" style="margin: 30px 0 30px"></h3>
-        </div>
-        <footer style="position: relative">
-            <p style="margin: 20px 0 0">Какая-то дополнительная информация</p>
-            <p>Если возникли сложности с использованием сайта, пишите нам на почту <a style="color: #4B0082" href="mailto:angyling@yandex.ru">имяпочты@yandex.ru</a>.</p>
-        </footer>
-
-        <script>
-            {% include "js.js" %}
-        </script>
-    </body>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<head>
+		<title>Опросник по центральной сенситизации</title>
+		<style>
+			{% include "css.css" %}
+		</style>
+	</head>
+	<body>
+		{% include "snippets/_header.html" %}
+		<div class="test_table">
+			<h1>Опросник по центральной сенситизации: часть А</h1>
+			<h2><i>Перевод О.Р.Есина, Е.А.Горобец с разрешения Randy Neblett</i></h2>
+			<h2 style="font-size: 20px"><i>Казанский федеральный университет, 2019</i></h2>
+			<h3>Пожалуйста, нажмите в правой части на слово, точнее всего соответствующее каждому утверждению.</h3>
+			<table border="0">
+				<tr id='1q'>
+					<td tag="unchecked">Я чувствую себя усталым и неотдохнувшим, когда просыпаюсь</td>
+					<td><button class="test_button" value=0 line=1 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=1 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=1 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=1 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=1 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='2q'>
+					<td tag="unchecked">Я чувствую напряжение/скованность и боль в мышцах</td>
+					<td><button class="test_button" value=0 line=2 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=2 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=2 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=2 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=2 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='3q'>
+					<td tag="unchecked">У меня бывают приступы тревожности</td>
+					<td><button class="test_button" value=0 line=3 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=3 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=3 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=3 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=3 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='4q'>
+					<td tag="unchecked">Я скриплю зубами или стискиваю их</td>
+					<td><button class="test_button" value=0 line=4 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=4 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=4 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=4 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=4 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='5q'>
+					<td tag="unchecked">У меня проблемы со стулом (диарея и/или запор)</td>
+					<td><button class="test_button" value=0 line=5 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=5 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=5 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=5 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=5 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='6q'>
+					<td tag="unchecked">Мне нужна помощь в обычной бытовой жизни</td>
+					<td><button class="test_button" value=0 line=6 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=6 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=6 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=6 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=6 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='7q'>
+					<td tag="unchecked">Я чувствителен к яркому свету</td>
+					<td><button class="test_button" value=0 line=7 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=7 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=7 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=7 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=7 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='8q'>
+					<td tag="unchecked">Я очень быстро устаю от физической активности</td>
+					<td><button class="test_button" value=0 line=8 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=8 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=8 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=8 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=8 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='9q'>
+					<td tag="unchecked">Я чувствую боль по всему телу</td>
+					<td><button class="test_button" value=0 line=9 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=9 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=9 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=9 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=9 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='10q'>
+					<td tag="unchecked">У меня головные боли</td>
+					<td><button class="test_button" value=0 line=10 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=10 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=10 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=10 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=10 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='11q'>
+					<td tag="unchecked">Я чувствую дискомфорт в мочевом пузыре и/или жжение при мочеиспускании</td>
+					<td><button class="test_button" value=0 line=11 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=11 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=11 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=11 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=11 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='12q'>
+					<td tag="unchecked">Я плохо сплю</td>
+					<td><button class="test_button" value=0 line=12 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=12 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=12 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=12 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=12 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='13q'>
+					<td tag="unchecked">Мне сложно сконцентрироваться</td>
+					<td><button class="test_button" value=0 line=13 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=13 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=13 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=13 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=13 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='14q'>
+					<td tag="unchecked">У меня проблемы с кожей (сухость, зуд, высыпания)</td>
+					<td><button class="test_button" value=0 line=14 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=14 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=14 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=14 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=14 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='15q'>
+					<td tag="unchecked">Стресс усиливает мои соматические симптомы</td>
+					<td><button class="test_button" value=0 line=15 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=15 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=15 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=15 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=15 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='16q'>
+					<td tag="unchecked">Я чувствую грусть или подавленность</td>
+					<td><button class="test_button" value=0 line=16 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=16 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=16 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=16 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=16 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='17q'>
+					<td tag="unchecked">У меня мало сил</td>
+					<td><button class="test_button" value=0 line=17 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=17 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=17 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=17 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=17 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='18q'>
+					<td tag="unchecked">У меня напряжены мышцы шеи и плеч</td>
+					<td><button class="test_button" value=0 line=18 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=18 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=18 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=18 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=18 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='19q'>
+					<td tag="unchecked">У меня боли в челюсти</td>
+					<td><button class="test_button" value=0 line=19 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=19 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=19 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=19 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=19 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='20q'>
+					<td tag="unchecked">Некоторые запахи, например духи, вызывают у меня головокружение и тошноту</td>
+					<td><button class="test_button" value=0 line=20 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=20 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=20 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=20 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=20 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='21q'>
+					<td tag="unchecked">Мне приходится часто мочиться</td>
+					<td><button class="test_button" value=0 line=21 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=21 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=21 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=21 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=21 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='22q'>
+					<td tag="unchecked">У меня дискомфорт в ногах и «синдром беспокойных ног», когда я ночью пытаюсь уснуть</td>
+					<td><button class="test_button" value=0 line=22 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=22 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=22 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=22 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=22 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='23q'>
+					<td tag="unchecked">У меня сложности с запоминанием</td>
+					<td><button class="test_button" value=0 line=23 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=23 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=23 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=23 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=23 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='24q'>
+					<td tag="unchecked">В детстве я перенес(ла) травму</td>
+					<td><button class="test_button" value=0 line=24 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=24 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=24 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=24 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=24 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+				<tr id='25q'>
+					<td tag="unchecked">У меня боль в тазовой области</td>
+					<td><button class="test_button" value=0 line=25 onclick="ChangeColor(this);">Никогда</button></td>
+					<td><button class="test_button" value=1 line=25 onclick="ChangeColor(this);">Редко</button></td>
+					<td><button class="test_button" value=2 line=25 onclick="ChangeColor(this);">Иногда</button></td>
+					<td><button class="test_button" value=3 line=25 onclick="ChangeColor(this);">Часто</button></td>
+					<td><button class="test_button" value=4 line=25 onclick="ChangeColor(this);">Всегда</button></td>
+				</tr>
+			</table>
+			<p style="text-align: center"><button type="submit" value="send" class="res_button" onclick="getresult();">Получить результат</button></p>
+			<h2 id='res' style='margin: 60px 0 0'></h2>
+			<h3 id="save" style="margin: 30px 0 30px"></h3>
+		</div>
+		<footer style="position: relative">
+			<p style="margin: 20px 0 0">Какая-то дополнительная информация</p>
+			<p>Если возникли сложности с использованием сайта, пишите нам на почту <a style="color: #4B0082" href="mailto:angyling@yandex.ru">имяпочты@yandex.ru</a>.</p>
+		</footer>
+		<script>
+			{% include "js.js" %}
+		</script>
+	</body>
 </html>

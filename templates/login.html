@@ -1,40 +1,37 @@
 <html lang="ru">
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<head>
-    <meta charset="UTF-8">
-    <title>Вход</title>
-    <style>
-        {% include "css.css" %}
-    </style>
-</head>
-
-<body>
-    {% include "snippets/_header.html" %}
-
-    {% if message %}
-            <div class="test_table" style="width: 99%; height: 50px; border: 2px solid red; border-radius: 10px">
-            <h2 style="color: red">{{ message }}</h2>
-        </div>
-    {% endif %}
-
-    <content style="padding: 0 0 100px 0">
-    <div style="margin: 50px">
-        <h1>Вход</h1>
-        <div class="box"><center>
-            <form method="POST">
-                    <div>
-                      <input class="signform" type="text" required name="login" value="{{request.form.login}}" placeholder="Логин" autofocus="">
-                    </div>
-                    <div>
-                      <input class="signform" type="password" value="{{request.form.password}}" required name="password" placeholder="Пароль">
-                    </div>
-                <button class="signbutton" type="submit" value="send">Войти</button>
-            </form>
-        </center>
-        </div>
-    </div>
-    </content>
-
-    {% include "snippets/_footer.html" %}
-</body>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Вход</title>
+		<style>
+			{% include "css.css" %}
+		</style>
+	</head>
+	<body>
+		{% include "snippets/_header.html" %}
+		{% if message %}
+		<div class="test_table" style="width: 99%; height: 50px; border: 2px solid red; border-radius: 10px">
+			<h2 style="color: red">{{ message }}</h2>
+		</div>
+		{% endif %}
+		<content style="padding: 0 0 100px 0">
+			<div style="margin: 50px">
+				<h1>Вход</h1>
+				<div class="box">
+					<center>
+						<form method="POST">
+							<div>
+								<input class="signform" type="text" required name="login" value="{{request.form.login}}" placeholder="Логин" autofocus="">
+							</div>
+							<div>
+								<input class="signform" type="password" value="{{request.form.password}}" required name="password" placeholder="Пароль">
+							</div>
+							<button class="signbutton" type="submit" value="send">Войти</button>
+						</form>
+					</center>
+				</div>
+			</div>
+		</content>
+		{% include "snippets/_footer.html" %}
+	</body>
 </html>

@@ -87,7 +87,7 @@ def sensitisation():
             cur = con.cursor()
 
             if len(patientname) == 3:
-                cur.execute("INSERT INTO patients VALUES (?, ?, ?, ?, ?)",
+                cur.execute("INSERT INTO patients (created, surname, name, patronymic, test, result) VALUES (?, ?, ?, ?, ?, ?)",
                             (session['date'], patientname[0], patientname[1], patientname[2], test, int(session['result']))
                             )
             elif len(patientname) == 2:
@@ -105,3 +105,4 @@ def sensitisation():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
+

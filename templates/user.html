@@ -1,41 +1,39 @@
 <html lang="ru">
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-<head>
-    <meta charset="UTF-8">
-    <title>Личный кабинет</title>
-    <style>
-        {% include "css.css" %}
-    </style>
-</head>
-
-<body>
-    {% include "snippets/_header.html" %}
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
-        <div class="test_table" style="width: 99%; height: 50px; border: 2px solid green; border-radius: 10px">
-            <h2 style="color: green">{{ messages[0] }}</h2>
-        </div>
-      {% endif %}
-    {% endwith %}
-
-    <div style="margin: 50px; min-height: 60%">
-        <h1>Личный кабинет пользователя {{ session.user.login }}</h1>
-        <h3 style="font-weight: normal">Здесь представлена база данных пациентов и результатов их тестирования</h3>
-        <table style="margin: 30px auto 50px; height: 30px;">
-        {% for patient in patients %}
-            <tr>
-                <td style="width: 400px;">
-                    <h3 style="margin: 10px"><a href="#">{{ patient['surname'] }} {{ patient['name'] }}
-                        {% if patient['patronymic'] %}{{ patient['patronymic'] }}{% endif %}</a></h3>
-                </td>
-                <td style="width: 200px;">Опросник ЦС А</td>
-                <td style="width: 200px;">{{ patient['created'] }}</td>
-                <td>{{patient['result']}}</td>
-            </tr>
-        {% endfor %}
-        </table>
-    </div>
-
-    {% include "snippets/_footer.html" %}
-</body>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+	<head>
+		<meta charset="UTF-8">
+		<title>Личный кабинет</title>
+		<style>
+			{% include "css.css" %}
+		</style>
+	</head>
+	<body>
+		{% include "snippets/_header.html" %}
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		<div class="test_table" style="width: 99%; height: 50px; border: 2px solid green; border-radius: 10px">
+			<h2 style="color: green">{{ messages[0] }}</h2>
+		</div>
+		{% endif %}
+		{% endwith %}
+		<div style="margin: 50px; min-height: 60%">
+			<h1>Личный кабинет пользователя {{ session.user.login }}</h1>
+			<h3 style="font-weight: normal">Здесь представлена база данных пациентов и результатов их тестирования</h3>
+			<table style="margin: 30px auto 50px; height: 30px;">
+				{% for patient in patients %}
+				<tr>
+					<td style="width: 400px;">
+						<h3 style="margin: 10px; color: #4B0082"><a href="#">{{ patient['surname'] }} {{ patient['name'] }}
+							{% if patient['patronymic'] %}{{ patient['patronymic'] }}{% endif %}</a>
+						</h3>
+					</td>
+					<td style="width: 200px;">Опросник ЦС А</td>
+					<td style="width: 200px;">{{ patient['created'] }}</td>
+					<td>{{patient['result']}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+		{% include "snippets/_footer.html" %}
+	</body>
 </html>

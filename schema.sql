@@ -3,10 +3,10 @@ DROP TABLE IF EXISTS patients;
 CREATE TABLE patients (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    surname TEXT NOT NULL,
-    name TEXT NOT NULL,
-    patronymic TEXT,
-    test TEXT NOT NULL,
+    surname VARCHAR(30) NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    patronymic VARCHAR(30),
+    test VARCHAR(20) NOT NULL,
     result TINYINT NOT NULL,
-    info TEXT
+    info VARCHAR(500)
 );
